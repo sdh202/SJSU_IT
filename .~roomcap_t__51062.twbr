@@ -1,0 +1,863 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20241.24.0208.0337                               -->
+<workbook original-version='18.1' source-build='2024.1.0 (20241.24.0208.0337)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='roomcap' inline='true' name='federated.0abm7vm0qf3494118xqnk0v3ljl8' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='roomcap' name='textscan.1x9hltx1bgfnce1fdq0gs0rcjiw4'>
+            <connection class='textscan' directory='/Users/sdhomne/sjsuIT' filename='roomcap.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1x9hltx1bgfnce1fdq0gs0rcjiw4' name='roomcap.csv' table='[roomcap#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='FACILITY_ID' ordinal='0' />
+            <column datatype='string' name='DESCR' ordinal='1' />
+            <column datatype='integer' name='ROOM_CAPACITY' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1x9hltx1bgfnce1fdq0gs0rcjiw4' name='roomcap.csv' table='[roomcap#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='FACILITY_ID' ordinal='0' />
+            <column datatype='string' name='DESCR' ordinal='1' />
+            <column datatype='integer' name='ROOM_CAPACITY' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[roomcap.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FACILITY_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[FACILITY_ID]</local-name>
+            <parent-name>[roomcap.csv]</parent-name>
+            <remote-alias>FACILITY_ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roomcap.csv_5FC0F13CCCBF47FC8E05D5D6CE15E0C7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCR</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DESCR]</local-name>
+            <parent-name>[roomcap.csv]</parent-name>
+            <remote-alias>DESCR</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roomcap.csv_5FC0F13CCCBF47FC8E05D5D6CE15E0C7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ROOM_CAPACITY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ROOM_CAPACITY]</local-name>
+            <parent-name>[roomcap.csv]</parent-name>
+            <remote-alias>ROOM_CAPACITY</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roomcap.csv_5FC0F13CCCBF47FC8E05D5D6CE15E0C7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Descr' datatype='string' name='[DESCR]' role='dimension' type='nominal' />
+      <column caption='Facility Id' datatype='string' name='[FACILITY_ID]' role='dimension' type='nominal' />
+      <column caption='Room Capacity' datatype='integer' name='[ROOM_CAPACITY]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='roomcap.csv' datatype='table' name='[__tableau_internal_object_id__].[roomcap.csv_5FC0F13CCCBF47FC8E05D5D6CE15E0C7]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='roomcap.csv' id='roomcap.csv_5FC0F13CCCBF47FC8E05D5D6CE15E0C7'>
+            <properties context=''>
+              <relation connection='textscan.1x9hltx1bgfnce1fdq0gs0rcjiw4' name='roomcap.csv' table='[roomcap#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='FACILITY_ID' ordinal='0' />
+                  <column datatype='string' name='DESCR' ordinal='1' />
+                  <column datatype='integer' name='ROOM_CAPACITY' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='Classcount' inline='true' name='federated.05zq8zv1kk9kor1e65lb30nb3x9m' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Classcount' name='textscan.1hvsbph1fdg1eh14f4mt90j28krv'>
+            <connection class='textscan' directory='/Users/sdhomne/sjsuIT' filename='Classcount.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1hvsbph1fdg1eh14f4mt90j28krv' name='Classcount.csv' table='[Classcount#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='FACILITY_ID' ordinal='0' />
+            <column datatype='integer' name='ClassCount' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1hvsbph1fdg1eh14f4mt90j28krv' name='Classcount.csv' table='[Classcount#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='FACILITY_ID' ordinal='0' />
+            <column datatype='integer' name='ClassCount' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Classcount.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FACILITY_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[FACILITY_ID]</local-name>
+            <parent-name>[Classcount.csv]</parent-name>
+            <remote-alias>FACILITY_ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Classcount.csv_ADAC07FE1C784B0288601FA33B511FC8]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ClassCount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ClassCount]</local-name>
+            <parent-name>[Classcount.csv]</parent-name>
+            <remote-alias>ClassCount</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Classcount.csv_ADAC07FE1C784B0288601FA33B511FC8]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Class Count' datatype='integer' name='[ClassCount]' role='measure' type='quantitative' />
+      <column caption='Facility Id' datatype='string' name='[FACILITY_ID]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Classcount.csv' datatype='table' name='[__tableau_internal_object_id__].[Classcount.csv_ADAC07FE1C784B0288601FA33B511FC8]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Classcount.csv' id='Classcount.csv_ADAC07FE1C784B0288601FA33B511FC8'>
+            <properties context=''>
+              <relation connection='textscan.1hvsbph1fdg1eh14f4mt90j28krv' name='Classcount.csv' table='[Classcount#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='FACILITY_ID' ordinal='0' />
+                  <column datatype='integer' name='ClassCount' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Room Capacities</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='roomcap' name='federated.0abm7vm0qf3494118xqnk0v3ljl8' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0abm7vm0qf3494118xqnk0v3ljl8'>
+            <column caption='Descr' datatype='string' name='[DESCR]' role='dimension' type='nominal' />
+            <column caption='Facility Id' datatype='string' name='[FACILITY_ID]' role='dimension' type='nominal' />
+            <column caption='Room Capacity' datatype='integer' name='[ROOM_CAPACITY]' role='measure' type='quantitative' />
+            <_.fcp.ObjectModelTableType.false...column caption='roomcap.csv' datatype='integer' name='[__tableau_internal_object_id__].[roomcap.csv_5FC0F13CCCBF47FC8E05D5D6CE15E0C7]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[roomcap.csv_5FC0F13CCCBF47FC8E05D5D6CE15E0C7]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:roomcap.csv_5FC0F13CCCBF47FC8E05D5D6CE15E0C7:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='roomcap.csv' datatype='table' name='[__tableau_internal_object_id__].[roomcap.csv_5FC0F13CCCBF47FC8E05D5D6CE15E0C7]' role='measure' type='quantitative' />
+            <column-instance column='[DESCR]' derivation='None' name='[none:DESCR:nk]' pivot='key' type='nominal' />
+            <column-instance column='[FACILITY_ID]' derivation='None' name='[none:FACILITY_ID:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ROOM_CAPACITY]' derivation='Sum' name='[sum:ROOM_CAPACITY:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0abm7vm0qf3494118xqnk0v3ljl8].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <manual-sort column='[federated.0abm7vm0qf3494118xqnk0v3ljl8].[none:FACILITY_ID:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;MUS176&quot;</bucket>
+              <bucket>&quot;MUS150&quot;</bucket>
+              <bucket>&quot;ENG189&quot;</bucket>
+              <bucket>&quot;MD101&quot;</bucket>
+              <bucket>&quot;SCI142&quot;</bucket>
+              <bucket>&quot;YUH124&quot;</bucket>
+              <bucket>&quot;WSQ109&quot;</bucket>
+              <bucket>&quot;ENG331&quot;</bucket>
+              <bucket>&quot;SCI164&quot;</bucket>
+              <bucket>&quot;ENG341&quot;</bucket>
+              <bucket>&quot;ENG343&quot;</bucket>
+              <bucket>&quot;ENG329&quot;</bucket>
+              <bucket>&quot;BBC204&quot;</bucket>
+              <bucket>&quot;ENG337&quot;</bucket>
+              <bucket>&quot;ENG345&quot;</bucket>
+              <bucket>&quot;SH100&quot;</bucket>
+              <bucket>&quot;ENG339&quot;</bucket>
+              <bucket>&quot;BBC004&quot;</bucket>
+              <bucket>&quot;DH135&quot;</bucket>
+              <bucket>&quot;ENG340&quot;</bucket>
+              <bucket>&quot;MH523&quot;</bucket>
+              <bucket>&quot;CL310&quot;</bucket>
+              <bucket>&quot;CL226&quot;</bucket>
+              <bucket>&quot;CL222&quot;</bucket>
+              <bucket>&quot;BBC202&quot;</bucket>
+              <bucket>&quot;YUH208&quot;</bucket>
+              <bucket>&quot;BBC021&quot;</bucket>
+              <bucket>&quot;MH520&quot;</bucket>
+              <bucket>&quot;CL117&quot;</bucket>
+              <bucket>&quot;CL224&quot;</bucket>
+              <bucket>&quot;BBC022&quot;</bucket>
+              <bucket>&quot;BBC320&quot;</bucket>
+              <bucket>&quot;DH250&quot;</bucket>
+              <bucket>&quot;WSQ207&quot;</bucket>
+              <bucket>&quot;ENG333&quot;</bucket>
+              <bucket>&quot;BBC003&quot;</bucket>
+              <bucket>&quot;ONLINE&quot;</bucket>
+              <bucket>&quot;ENG303&quot;</bucket>
+              <bucket>&quot;IS216&quot;</bucket>
+              <bucket>&quot;BBC102&quot;</bucket>
+              <bucket>&quot;DH351&quot;</bucket>
+              <bucket>&quot;HGH103&quot;</bucket>
+              <bucket>&quot;CL204&quot;</bucket>
+              <bucket>&quot;CL238&quot;</bucket>
+              <bucket>&quot;SH434&quot;</bucket>
+              <bucket>&quot;BBC201&quot;</bucket>
+              <bucket>&quot;BBC220&quot;</bucket>
+              <bucket>&quot;ENG325&quot;</bucket>
+              <bucket>&quot;DMH160&quot;</bucket>
+              <bucket>&quot;DMH234&quot;</bucket>
+              <bucket>&quot;SH241&quot;</bucket>
+              <bucket>&quot;CL202&quot;</bucket>
+              <bucket>&quot;SH346&quot;</bucket>
+              <bucket>&quot;BBC108&quot;</bucket>
+              <bucket>&quot;BBC322&quot;</bucket>
+              <bucket>&quot;BBC302&quot;</bucket>
+              <bucket>&quot;ENG301&quot;</bucket>
+              <bucket>&quot;CL302&quot;</bucket>
+              <bucket>&quot;DMH166&quot;</bucket>
+              <bucket>&quot;SPXE163&quot;</bucket>
+              <bucket>&quot;ENG401&quot;</bucket>
+              <bucket>&quot;SH312&quot;</bucket>
+              <bucket>&quot;BBC107&quot;</bucket>
+              <bucket>&quot;SH120&quot;</bucket>
+              <bucket>&quot;BBC222&quot;</bucket>
+              <bucket>&quot;CL324&quot;</bucket>
+              <bucket>&quot;BBC105&quot;</bucket>
+              <bucket>&quot;DMH353&quot;</bucket>
+              <bucket>&quot;BBC104&quot;</bucket>
+              <bucket>&quot;BBC106&quot;</bucket>
+              <bucket>&quot;BBC324&quot;</bucket>
+              <bucket>&quot;DMH163&quot;</bucket>
+              <bucket>&quot;DMH355&quot;</bucket>
+              <bucket>&quot;DMH348&quot;</bucket>
+              <bucket>&quot;CL234&quot;</bucket>
+              <bucket>&quot;BBC103&quot;</bucket>
+              <bucket>&quot;DMH226B&quot;</bucket>
+              <bucket>&quot;DMH165&quot;</bucket>
+              <bucket>&quot;CCB102&quot;</bucket>
+              <bucket>&quot;DMH149A&quot;</bucket>
+              <bucket>&quot;BBC326&quot;</bucket>
+              <bucket>&quot;YUH106&quot;</bucket>
+              <bucket>&quot;MH323&quot;</bucket>
+              <bucket>&quot;SCI311&quot;</bucket>
+              <bucket>&quot;DMH150&quot;</bucket>
+              <bucket>&quot;DMH231&quot;</bucket>
+              <bucket>&quot;BBC205&quot;</bucket>
+              <bucket>&quot;SH413&quot;</bucket>
+              <bucket>&quot;MH222&quot;</bucket>
+              <bucket>&quot;MH225&quot;</bucket>
+              <bucket>&quot;MH332&quot;</bucket>
+              <bucket>&quot;ENG403&quot;</bucket>
+              <bucket>&quot;HGH124&quot;</bucket>
+              <bucket>&quot;ISB876&quot;</bucket>
+              <bucket>&quot;SH230&quot;</bucket>
+              <bucket>&quot;SH242&quot;</bucket>
+              <bucket>&quot;BBC224&quot;</bucket>
+              <bucket>&quot;BBC226&quot;</bucket>
+              <bucket>&quot;DMH161&quot;</bucket>
+              <bucket>&quot;DMH227&quot;</bucket>
+              <bucket>&quot;MH322&quot;</bucket>
+              <bucket>&quot;MH422&quot;</bucket>
+              <bucket>&quot;DMH167&quot;</bucket>
+              <bucket>&quot;DMH226A&quot;</bucket>
+              <bucket>&quot;SH240&quot;</bucket>
+              <bucket>&quot;HGH116&quot;</bucket>
+              <bucket>&quot;IS117&quot;</bucket>
+              <bucket>&quot;MH234&quot;</bucket>
+              <bucket>&quot;SCI258&quot;</bucket>
+              <bucket>&quot;DMH356&quot;</bucket>
+              <bucket>&quot;BBC125&quot;</bucket>
+              <bucket>&quot;BBC225&quot;</bucket>
+              <bucket>&quot;SH431&quot;</bucket>
+              <bucket>&quot;SPXC151&quot;</bucket>
+              <bucket>&quot;SH335&quot;</bucket>
+              <bucket>&quot;SH345&quot;</bucket>
+              <bucket>&quot;SH334&quot;</bucket>
+              <bucket>&quot;SH435&quot;</bucket>
+              <bucket>&quot;HB106&quot;</bucket>
+              <bucket>&quot;DH243&quot;</bucket>
+              <bucket>&quot;MH223&quot;</bucket>
+              <bucket>&quot;DMH164&quot;</bucket>
+              <bucket>&quot;MH235&quot;</bucket>
+              <bucket>&quot;ISB782&quot;</bucket>
+              <bucket>&quot;CL306&quot;</bucket>
+              <bucket>&quot;HGH229&quot;</bucket>
+              <bucket>&quot;ISB878&quot;</bucket>
+              <bucket>&quot;SH311&quot;</bucket>
+              <bucket>&quot;SH314&quot;</bucket>
+              <bucket>&quot;SH239&quot;</bucket>
+              <bucket>&quot;WSQ004&quot;</bucket>
+              <bucket>&quot;ART133&quot;</bucket>
+              <bucket>&quot;DH450&quot;</bucket>
+              <bucket>&quot;ENG327&quot;</bucket>
+              <bucket>&quot;SH231&quot;</bucket>
+              <bucket>&quot;CL216&quot;</bucket>
+              <bucket>&quot;ENG232&quot;</bucket>
+              <bucket>&quot;HGH118&quot;</bucket>
+              <bucket>&quot;SH315&quot;</bucket>
+              <bucket>&quot;HB407&quot;</bucket>
+              <bucket>&quot;MUS160&quot;</bucket>
+              <bucket>&quot;HGH225&quot;</bucket>
+              <bucket>&quot;SH229&quot;</bucket>
+              <bucket>&quot;SH238&quot;</bucket>
+              <bucket>&quot;MUS250&quot;</bucket>
+              <bucket>&quot;DBH133&quot;</bucket>
+              <bucket>&quot;MUS161&quot;</bucket>
+              <bucket>&quot;SH433&quot;</bucket>
+              <bucket>&quot;ISB784&quot;</bucket>
+              <bucket>&quot;CL243&quot;</bucket>
+              <bucket>&quot;BBC321&quot;</bucket>
+              <bucket>&quot;CCB101&quot;</bucket>
+              <bucket>&quot;DMH208&quot;</bucket>
+              <bucket>&quot;ENG103&quot;</bucket>
+              <bucket>&quot;BBC130&quot;</bucket>
+              <bucket>&quot;HGH122&quot;</bucket>
+              <bucket>&quot;IS227&quot;</bucket>
+              <bucket>&quot;SCI242&quot;</bucket>
+              <bucket>&quot;ENG335&quot;</bucket>
+              <bucket>&quot;ENG395&quot;</bucket>
+              <bucket>&quot;HGH223&quot;</bucket>
+              <bucket>&quot;MH233&quot;</bucket>
+              <bucket>&quot;ART135&quot;</bucket>
+              <bucket>&quot;DH415&quot;</bucket>
+              <bucket>&quot;CL303A&quot;</bucket>
+              <bucket>&quot;MH320&quot;</bucket>
+              <bucket>&quot;DMH308&quot;</bucket>
+              <bucket>&quot;DMH354&quot;</bucket>
+              <bucket>&quot;MUS182&quot;</bucket>
+              <bucket>&quot;CL308&quot;</bucket>
+              <bucket>&quot;DBH117D&quot;</bucket>
+              <bucket>&quot;SH411&quot;</bucket>
+              <bucket>&quot;SH414&quot;</bucket>
+              <bucket>&quot;BBC120&quot;</bucket>
+              <bucket>&quot;BBC203&quot;</bucket>
+              <bucket>&quot;ISB870&quot;</bucket>
+              <bucket>&quot;CL111&quot;</bucket>
+              <bucket>&quot;SPXE178&quot;</bucket>
+              <bucket>&quot;SH348&quot;</bucket>
+              <bucket>&quot;SH211&quot;</bucket>
+              <bucket>&quot;IS226&quot;</bucket>
+              <bucket>&quot;SPXC216&quot;</bucket>
+              <bucket>&quot;DMH358&quot;</bucket>
+              <bucket>&quot;MH424&quot;</bucket>
+              <bucket>&quot;BBC301&quot;</bucket>
+              <bucket>&quot;BBC305&quot;</bucket>
+              <bucket>&quot;DMH149B&quot;</bucket>
+              <bucket>&quot;SCI253&quot;</bucket>
+              <bucket>&quot;SPXC107B&quot;</bucket>
+              <bucket>&quot;YUH243&quot;</bucket>
+              <bucket>&quot;CL205&quot;</bucket>
+              <bucket>&quot;DH416&quot;</bucket>
+              <bucket>&quot;IS241&quot;</bucket>
+              <bucket>&quot;MH324&quot;</bucket>
+              <bucket>&quot;BBC304&quot;</bucket>
+              <bucket>&quot;MUS211&quot;</bucket>
+              <bucket>&quot;DBH225&quot;</bucket>
+              <bucket>&quot;SH444&quot;</bucket>
+              <bucket>&quot;SPXC107A&quot;</bucket>
+              <bucket>&quot;DMH357&quot;</bucket>
+              <bucket>&quot;SH347&quot;</bucket>
+              <bucket>&quot;SCI319&quot;</bucket>
+              <bucket>&quot;SPXC152&quot;</bucket>
+              <bucket>&quot;SH212&quot;</bucket>
+              <bucket>&quot;BBC126&quot;</bucket>
+              <bucket>&quot;SH313&quot;</bucket>
+              <bucket>&quot;WSQ111&quot;</bucket>
+              <bucket>&quot;YUH126&quot;</bucket>
+              <bucket>&quot;HGH120&quot;</bucket>
+              <bucket>&quot;IS133&quot;</bucket>
+              <bucket>&quot;DMH162&quot;</bucket>
+              <bucket>&quot;DMH359&quot;</bucket>
+              <bucket>&quot;IS215&quot;</bucket>
+              <bucket>&quot;DH344&quot;</bucket>
+              <bucket>&quot;ART110&quot;</bucket>
+              <bucket>&quot;DMH347&quot;</bucket>
+              <bucket>&quot;WSQ201&quot;</bucket>
+              <bucket>&quot;ENG490&quot;</bucket>
+              <bucket>&quot;SH448&quot;</bucket>
+              <bucket>&quot;YUH233&quot;</bucket>
+              <bucket>&quot;HB408&quot;</bucket>
+              <bucket>&quot;RHV135&quot;</bucket>
+              <bucket>&quot;DH318&quot;</bucket>
+              <bucket>&quot;DH515&quot;</bucket>
+              <bucket>&quot;CL225B&quot;</bucket>
+              <bucket>&quot;HB207&quot;</bucket>
+              <bucket>&quot;CCB210&quot;</bucket>
+              <bucket>&quot;IS230&quot;</bucket>
+              <bucket>&quot;SPXC153&quot;</bucket>
+              <bucket>&quot;ART103&quot;</bucket>
+              <bucket>&quot;DH614&quot;</bucket>
+              <bucket>&quot;IS118&quot;</bucket>
+              <bucket>&quot;MUS210&quot;</bucket>
+              <bucket>&quot;DH246&quot;</bucket>
+              <bucket>&quot;CCB115&quot;</bucket>
+              <bucket>&quot;MH423&quot;</bucket>
+              <bucket>&quot;IS115&quot;</bucket>
+              <bucket>&quot;ART205&quot;</bucket>
+              <bucket>&quot;ART222&quot;</bucket>
+              <bucket>&quot;IS240&quot;</bucket>
+              <bucket>&quot;SPXE180&quot;</bucket>
+              <bucket>&quot;HB206&quot;</bucket>
+              <bucket>&quot;DH208&quot;</bucket>
+              <bucket>&quot;CCB122&quot;</bucket>
+              <bucket>&quot;BBC128&quot;</bucket>
+              <bucket>&quot;CL218&quot;</bucket>
+              <bucket>&quot;BBC121&quot;</bucket>
+              <bucket>&quot;HGH231&quot;</bucket>
+              <bucket>&quot;SH213&quot;</bucket>
+              <bucket>&quot;HGH219&quot;</bucket>
+              <bucket>&quot;ART212&quot;</bucket>
+              <bucket>&quot;ART216&quot;</bucket>
+              <bucket>&quot;ART218&quot;</bucket>
+              <bucket>&quot;ART224&quot;</bucket>
+              <bucket>&quot;ENG407&quot;</bucket>
+              <bucket>&quot;MUS266&quot;</bucket>
+              <bucket>&quot;WSQ113&quot;</bucket>
+              <bucket>&quot;MH425&quot;</bucket>
+              <bucket>&quot;MH224&quot;</bucket>
+              <bucket>&quot;HGH227&quot;</bucket>
+              <bucket>&quot;DBH222&quot;</bucket>
+              <bucket>&quot;BBC122&quot;</bucket>
+              <bucket>&quot;ART201&quot;</bucket>
+              <bucket>&quot;ART243&quot;</bucket>
+              <bucket>&quot;CL316&quot;</bucket>
+              <bucket>&quot;DH615&quot;</bucket>
+              <bucket>&quot;MUS108&quot;</bucket>
+              <bucket>&quot;BBC123&quot;</bucket>
+              <bucket>&quot;BBC221&quot;</bucket>
+              <bucket>&quot;BBC223&quot;</bucket>
+              <bucket>&quot;CL206&quot;</bucket>
+              <bucket>&quot;MH526&quot;</bucket>
+              <bucket>&quot;ART310&quot;</bucket>
+              <bucket>&quot;ART312&quot;</bucket>
+              <bucket>&quot;DH218&quot;</bucket>
+              <bucket>&quot;WSQ204&quot;</bucket>
+              <bucket>&quot;ENG213&quot;</bucket>
+              <bucket>&quot;IS114&quot;</bucket>
+              <bucket>&quot;SH449&quot;</bucket>
+              <bucket>&quot;ENG131&quot;</bucket>
+              <bucket>&quot;YUH128&quot;</bucket>
+              <bucket>&quot;SPXE160&quot;</bucket>
+              <bucket>&quot;HB405&quot;</bucket>
+              <bucket>&quot;WSQ001E&quot;</bucket>
+              <bucket>&quot;DH345&quot;</bucket>
+              <bucket>&quot;BBC124&quot;</bucket>
+              <bucket>&quot;ENG135&quot;</bucket>
+              <bucket>&quot;ART304&quot;</bucket>
+              <bucket>&quot;DH245&quot;</bucket>
+              <bucket>&quot;ISB786&quot;</bucket>
+              <bucket>&quot;SH412&quot;</bucket>
+              <bucket>&quot;DBH228&quot;</bucket>
+              <bucket>&quot;DH341&quot;</bucket>
+              <bucket>&quot;SPXE172&quot;</bucket>
+              <bucket>&quot;WSQ001C&quot;</bucket>
+              <bucket>&quot;DH306&quot;</bucket>
+              <bucket>&quot;DH505&quot;</bucket>
+              <bucket>&quot;ENG192&quot;</bucket>
+              <bucket>&quot;ENG221&quot;</bucket>
+              <bucket>&quot;SCI321&quot;</bucket>
+              <bucket>&quot;CCB209&quot;</bucket>
+              <bucket>&quot;CL242&quot;</bucket>
+              <bucket>&quot;DH352&quot;</bucket>
+              <bucket>&quot;ART203&quot;</bucket>
+              <bucket>&quot;ART206&quot;</bucket>
+              <bucket>&quot;ART237&quot;</bucket>
+              <bucket>&quot;ART241&quot;</bucket>
+              <bucket>&quot;ART314&quot;</bucket>
+              <bucket>&quot;CL225A&quot;</bucket>
+              <bucket>&quot;CL303B&quot;</bucket>
+              <bucket>&quot;CL318&quot;</bucket>
+              <bucket>&quot;DH406&quot;</bucket>
+              <bucket>&quot;DH552&quot;</bucket>
+              <bucket>&quot;HGH114&quot;</bucket>
+              <bucket>&quot;IS219C&quot;</bucket>
+              <bucket>&quot;ENG278&quot;</bucket>
+              <bucket>&quot;IS219&quot;</bucket>
+              <bucket>&quot;MUS186&quot;</bucket>
+              <bucket>&quot;ENG238&quot;</bucket>
+              <bucket>&quot;ENG244&quot;</bucket>
+              <bucket>&quot;ISB536&quot;</bucket>
+              <bucket>&quot;ISB240&quot;</bucket>
+              <bucket>&quot;WSQ001D&quot;</bucket>
+              <bucket>&quot;WSQ208&quot;</bucket>
+              <bucket>&quot;ENG164&quot;</bucket>
+              <bucket>&quot;BBC323&quot;</bucket>
+              <bucket>&quot;ENG150&quot;</bucket>
+              <bucket>&quot;ENG206&quot;</bucket>
+              <bucket>&quot;RHV120&quot;</bucket>
+              <bucket>&quot;WSQ106&quot;</bucket>
+              <bucket>&quot;ART141&quot;</bucket>
+              <bucket>&quot;DH410&quot;</bucket>
+              <bucket>&quot;DH413&quot;</bucket>
+              <bucket>&quot;DH507&quot;</bucket>
+              <bucket>&quot;ENG134&quot;</bucket>
+              <bucket>&quot;ENG288&quot;</bucket>
+              <bucket>&quot;ENG394&quot;</bucket>
+              <bucket>&quot;HB311&quot;</bucket>
+              <bucket>&quot;AF001&quot;</bucket>
+              <bucket>&quot;ART108&quot;</bucket>
+              <bucket>&quot;ART210&quot;</bucket>
+              <bucket>&quot;ART306&quot;</bucket>
+              <bucket>&quot;DH549&quot;</bucket>
+              <bucket>&quot;IS235&quot;</bucket>
+              <bucket>&quot;ISB872&quot;</bucket>
+              <bucket>&quot;IS166&quot;</bucket>
+              <bucket>&quot;ISB874&quot;</bucket>
+              <bucket>&quot;WSQ211&quot;</bucket>
+              <bucket>&quot;ENG105&quot;</bucket>
+              <bucket>&quot;DBH224&quot;</bucket>
+              <bucket>&quot;FO104&quot;</bucket>
+              <bucket>&quot;HGH217&quot;</bucket>
+              <bucket>&quot;ART105&quot;</bucket>
+              <bucket>&quot;DBH221&quot;</bucket>
+              <bucket>&quot;DH316&quot;</bucket>
+              <bucket>&quot;DH350&quot;</bucket>
+              <bucket>&quot;OFFCAMPUS&quot;</bucket>
+              <bucket>&quot;DH031&quot;</bucket>
+              <bucket>&quot;DH303&quot;</bucket>
+              <bucket>&quot;DH311&quot;</bucket>
+              <bucket>&quot;DH645&quot;</bucket>
+              <bucket>&quot;DH649&quot;</bucket>
+              <bucket>&quot;ENG133&quot;</bucket>
+              <bucket>&quot;ENG307&quot;</bucket>
+              <bucket>&quot;ENG391&quot;</bucket>
+              <bucket>&quot;ENG392&quot;</bucket>
+              <bucket>&quot;SUALLEY&quot;</bucket>
+              <bucket>&quot;YUH236&quot;</bucket>
+              <bucket>&quot;DBH209&quot;</bucket>
+              <bucket>&quot;DH443&quot;</bucket>
+              <bucket>&quot;DH611&quot;</bucket>
+              <bucket>&quot;DMH339&quot;</bucket>
+              <bucket>&quot;ENG286&quot;</bucket>
+              <bucket>&quot;ENG289&quot;</bucket>
+              <bucket>&quot;ENG405&quot;</bucket>
+              <bucket>&quot;IS124&quot;</bucket>
+              <bucket>&quot;ISB538&quot;</bucket>
+              <bucket>&quot;ISB542&quot;</bucket>
+              <bucket>&quot;ISB736&quot;</bucket>
+              <bucket>&quot;ISB788&quot;</bucket>
+              <bucket>&quot;SPXC234&quot;</bucket>
+              <bucket>&quot;WSQGRDN&quot;</bucket>
+              <bucket>&quot;DH407&quot;</bucket>
+              <bucket>&quot;SH331&quot;</bucket>
+              <bucket>&quot;WSQ001&quot;</bucket>
+              <bucket>&quot;ART301&quot;</bucket>
+              <bucket>&quot;ART309&quot;</bucket>
+              <bucket>&quot;DBH202&quot;</bucket>
+              <bucket>&quot;DH210&quot;</bucket>
+              <bucket>&quot;DH216&quot;</bucket>
+              <bucket>&quot;DH440&quot;</bucket>
+              <bucket>&quot;ENG258&quot;</bucket>
+              <bucket>&quot;ENG290&quot;</bucket>
+              <bucket>&quot;SCI307&quot;</bucket>
+              <bucket>&quot;DMH236&quot;</bucket>
+              <bucket>&quot;MUS124&quot;</bucket>
+              <bucket>&quot;DBH209B&quot;</bucket>
+              <bucket>&quot;DH221&quot;</bucket>
+              <bucket>&quot;DH647&quot;</bucket>
+              <bucket>&quot;ENG141&quot;</bucket>
+              <bucket>&quot;ENG319&quot;</bucket>
+              <bucket>&quot;HGH136C&quot;</bucket>
+              <bucket>&quot;DH544&quot;</bucket>
+              <bucket>&quot;HB301&quot;</bucket>
+              <bucket>&quot;HB102&quot;</bucket>
+              <bucket>&quot;ISB338&quot;</bucket>
+              <bucket>&quot;ENG268&quot;</bucket>
+              <bucket>&quot;ENG249&quot;</bucket>
+              <bucket>&quot;WSQ001B&quot;</bucket>
+              <bucket>&quot;ENG205&quot;</bucket>
+              <bucket>&quot;DH412&quot;</bucket>
+              <bucket>&quot;DH448&quot;</bucket>
+              <bucket>&quot;ENG305&quot;</bucket>
+              <bucket>&quot;ENG387&quot;</bucket>
+              <bucket>&quot;ENG389&quot;</bucket>
+              <bucket>&quot;ENG489&quot;</bucket>
+              <bucket>&quot;ENG492&quot;</bucket>
+              <bucket>&quot;HGH226&quot;</bucket>
+              <bucket>&quot;ISB236&quot;</bucket>
+              <bucket>&quot;SPXC231&quot;</bucket>
+              <bucket>&quot;ISB234&quot;</bucket>
+              <bucket>&quot;SCI233&quot;</bucket>
+              <bucket>&quot;SCI237&quot;</bucket>
+              <bucket>&quot;SCI241&quot;</bucket>
+              <bucket>&quot;SCI247&quot;</bucket>
+              <bucket>&quot;IS132&quot;</bucket>
+              <bucket>&quot;RHV110&quot;</bucket>
+              <bucket>&quot;CCB222&quot;</bucket>
+              <bucket>&quot;DH035&quot;</bucket>
+              <bucket>&quot;DH337&quot;</bucket>
+              <bucket>&quot;DH441&quot;</bucket>
+              <bucket>&quot;DH506&quot;</bucket>
+              <bucket>&quot;DH509&quot;</bucket>
+              <bucket>&quot;DH641&quot;</bucket>
+              <bucket>&quot;ENG132&quot;</bucket>
+              <bucket>&quot;ENG291&quot;</bucket>
+              <bucket>&quot;ENG386&quot;</bucket>
+              <bucket>&quot;ENG388&quot;</bucket>
+              <bucket>&quot;ENG393&quot;</bucket>
+              <bucket>&quot;IS165&quot;</bucket>
+              <bucket>&quot;ISB540&quot;</bucket>
+              <bucket>&quot;ISB636&quot;</bucket>
+              <bucket>&quot;ISB640&quot;</bucket>
+              <bucket>&quot;ISB734&quot;</bucket>
+              <bucket>&quot;SH332&quot;</bucket>
+              <bucket>&quot;CCB125&quot;</bucket>
+              <bucket>&quot;IS121&quot;</bucket>
+              <bucket>&quot;SCI131&quot;</bucket>
+              <bucket>&quot;SCI133&quot;</bucket>
+              <bucket>&quot;SCI251&quot;</bucket>
+              <bucket>&quot;SCI305&quot;</bucket>
+              <bucket>&quot;SCI313&quot;</bucket>
+              <bucket>&quot;SH410&quot;</bucket>
+              <bucket>&quot;MUS226&quot;</bucket>
+              <bucket>&quot;MUS157&quot;</bucket>
+              <bucket>&quot;SCI326&quot;</bucket>
+              <bucket>&quot;ART307&quot;</bucket>
+              <bucket>&quot;CCB216&quot;</bucket>
+              <bucket>&quot;DBH209I&quot;</bucket>
+              <bucket>&quot;DH010&quot;</bucket>
+              <bucket>&quot;DH309&quot;</bucket>
+              <bucket>&quot;DH601&quot;</bucket>
+              <bucket>&quot;DH640&quot;</bucket>
+              <bucket>&quot;ENG115&quot;</bucket>
+              <bucket>&quot;ENG125&quot;</bucket>
+              <bucket>&quot;ENG321&quot;</bucket>
+              <bucket>&quot;HGH221&quot;</bucket>
+              <bucket>&quot;IS119&quot;</bucket>
+              <bucket>&quot;SCI038&quot;</bucket>
+              <bucket>&quot;WSQ115&quot;</bucket>
+              <bucket>&quot;WSQ117&quot;</bucket>
+              <bucket>&quot;ENG209&quot;</bucket>
+              <bucket>&quot;ISB340&quot;</bucket>
+              <bucket>&quot;DH609&quot;</bucket>
+              <bucket>&quot;SH112&quot;</bucket>
+              <bucket>&quot;DH643&quot;</bucket>
+              <bucket>&quot;DH801&quot;</bucket>
+              <bucket>&quot;ENG109&quot;</bucket>
+              <bucket>&quot;ENG113&quot;</bucket>
+              <bucket>&quot;ENG233C&quot;</bucket>
+              <bucket>&quot;HB202&quot;</bucket>
+              <bucket>&quot;CCB118&quot;</bucket>
+              <bucket>&quot;ENG101&quot;</bucket>
+              <bucket>&quot;ENG376&quot;</bucket>
+              <bucket>&quot;ENG295&quot;</bucket>
+              <bucket>&quot;ENG317&quot;</bucket>
+              <bucket>&quot;SCI320&quot;</bucket>
+              <bucket>&quot;ENG223&quot;</bucket>
+              <bucket>&quot;SH117O&quot;</bucket>
+              <bucket>&quot;GOLFRANGE&quot;</bucket>
+              <bucket>&quot;MUS163&quot;</bucket>
+              <bucket>&quot;OFFSITE&quot;</bucket>
+              <bucket>&quot;SCCOURTS&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0abm7vm0qf3494118xqnk0v3ljl8].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0abm7vm0qf3494118xqnk0v3ljl8].[Multiple Values]' scope='cols' value='Capacity' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#4e79a7' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0abm7vm0qf3494118xqnk0v3ljl8].[none:DESCR:nk] / [federated.0abm7vm0qf3494118xqnk0v3ljl8].[none:FACILITY_ID:nk])</rows>
+        <cols>[federated.0abm7vm0qf3494118xqnk0v3ljl8].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{E501C7A7-EEA0-4F4D-A8F9-62B31649B860}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='3' name='Sheet 1' w='98400' x='800' y='1000'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='6' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='5' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Sheet 1' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{3187DE09-2C17-4982-A58C-A96F055ECD07}' />
+    </dashboard>
+  </dashboards>
+  <windows pres-mode='true' show-side-pane='false' source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BCBB0D35-7470-4502-8811-1F6C5766941A}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{D66E5702-A483-4811-9F23-2302857D6862}' />
+    </window>
+  </windows>
+</workbook>
