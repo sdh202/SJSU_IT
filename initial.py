@@ -2,9 +2,9 @@ import sqlite3
 import pandas as pd
 
 # CSV file paths
-file1 = 'Facility_Table_20240221.csv'
-file2 = 'Class_Data_Feb_21.csv'
-file3 = 'Master_Academic_Teaching_Spaces.csv'
+file1 = 'Datasets/Facility_Table_20240221.csv'
+file2 = 'Datasets/Class_Data_Feb_21.csv'
+file3 = 'Datasets/Master_Academic_Teaching_Spaces.csv'
 
 # Create initial db and convert CSVs into SQL Tables
 '''
