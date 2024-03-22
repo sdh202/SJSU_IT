@@ -1,24 +1,21 @@
 import sqlite3
 import pandas as pd
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+import os
 
 # CSV file paths
 file1 = 'Datasets/Facility_Table_20240221.csv'
 file2 = 'Datasets/Class_Data_Feb_21.csv'
 file3 = 'Datasets/Master_Academic_Teaching_Spaces.csv'
 
-# Create initial db and convert CSVs into SQL Tables
-'''
-TODO: Move to MySQL and add in dependencies for provisioning SQL server.
-- Credentials
-- Port on which server is open
-'''
 db = sqlite3.connect('initial.db')
 
 #TODO: Code Numbering
 
 #Pandas dataframe creation to read CSVs
-class_data = pd.read_csv('Class_Data_Feb_21.csv', encoding='latin1', low_memory=False)
-facility_table = pd.read_csv('Facility_Table_20240221.csv', encoding='latin1', low_memory=False)
+class_data = pd.read_csv('Datasets/Class_Data_Feb_21.csv', encoding='latin1', low_memory=False)
+facility_table = pd.read_csv('Datasets/Facility_Table_20240221.csv', encoding='latin1', low_memory=False)
 
 class_data.to_sql('Class_Data', db, if_exists='replace', index=False)
 facility_table.to_sql('Facility_Table', db, if_exists='replace', index=False)
@@ -49,6 +46,7 @@ db.execute(mk_consolidated)
 #Convert the Consolidated data to a CSV with Pandas - Download to project folder as 'consolidated_data.csv' and overwrites if any code changes
 consolidated_data = pd.read_sql_query("SELECT * FROM CONSOLIDATED", db)
 consolidated_data.to_csv('CSVs/consolidated_data.csv', index=False)
+
 
 # Drop the ROOMCAP_Join table if it exists
 drop_table_query = "DROP TABLE IF EXISTS ROOMCAP_Join;"
@@ -83,10 +81,36 @@ db.execute(mk_classcount_join)
 consolidated_data = pd.read_sql_query("SELECT * FROM CONSOLIDATED", db)
 consolidated_data.to_csv('CSVs/UC1_classcount_data.csv', index=False)
 
+#Google drive integration with oauth
+SCOPES = ['https://www.googleapis.com/auth/drive']
+PARENT_FOLDER_ID = "1ttQL9hPKe_kTvA7jeeuBvAEaJKF6FA61"
 
+def authenticate():
+    flow = InstalledAppFlow.from_client_secrets_file(
+        'client_secret.json', SCOPES)
+    creds = flow.run_local_server(port=0)
+    return creds
 
+def upload_csv(file_path):
+    creds = authenticate()
+    service = build('drive', 'v3', credentials=creds)
+    file_name = os.path.basename(file_path)
 
+    with open(file_path, 'r') as csv_file:
+        csv_contents = pd.read_csv(file_path, encoding='latin1', low_memory=False)
 
+    file_metadata = {
+        'name' : file_name,
+        'parents' : [PARENT_FOLDER_ID],
+        'mimeType': 'application/vnd.google-apps.spreadsheet'
+    }
+    
+    file = service.files().create(
+        body = file_metadata,
+        media_body=file_path
+    ).execute()
+
+upload_csv("CSVs/consolidated_data.csv")
 
 
 
@@ -122,4 +146,35 @@ FROM CONSOLIDATED
 WHERE LOCATION != 'MAIN';
 
 db.execute(locationTest)
+
+#Google drive integration with service account
+from google.oauth2 import service_account
+SCOPES = ['https://www.googleapis.com/auth/drive']
+SERVICE_ACCOUNT_FILE = 'service_account.json'
+PARENT_FOLDER_ID = ""
+
+def authenticate():
+    creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    return creds
+
+def upload_csv(file_path):
+    creds = authenticate()
+    service = build('drive', 'v3', credentials=creds)
+
+    with open(file_path, 'r') as csv_file:
+        csv_contents = pd.read_csv(file_path, encoding='latin1', low_memory=False)
+
+    file_metadata = {
+        'name' : "consolidated_data",
+        'parents' : [PARENT_FOLDER_ID],
+        'mimeType': 'application/vnd.google-apps.spreadsheet'
+    }
+    
+    file = service.files().create(
+        body = file_metadata,
+        media_body=file_path
+    ).execute()
+
+upload_csv("CSVs/consolidated_data.csv")
+
 '''
