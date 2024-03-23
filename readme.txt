@@ -1,7 +1,10 @@
 *** Consolidation Script and In-Progess Use Case Analysis ***
 Requirements (pipreqs): 
-    pandas==2.0.3
-    Requests==2.31.0
+google_api_python_client==2.123.0
+google_auth_oauthlib==1.2.0
+pandas==2.0.3
+
+#TODO: Add more detailed guide and Google Drive Instructions
 
 Pandas should be on the same PATH as Python interpreter.
 With above Requirements, initial.py can be run to generate
@@ -15,9 +18,6 @@ as the Use case 1 table: UC1_CLASSCOUNT are coverted to CSV files
 upon running the script, and are added to the CSVs folder. 
 They are updated if the code is modified.
 The CSV's can be directly imported into Google Sheets. 
-
-Optionally, Google Drive for Desktop can be downloaded
-to sync the CSVs with Google Drive more directly.
 
 Aim ahead is to incorporate and clean the 3rd
 sheet: 'Master_Academic_Teaching_Spaces' into the Consolidated
