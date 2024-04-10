@@ -27,29 +27,33 @@ def upload_csv(file_path):
     }
 
     # Look for existing files with the same name in the parent folder
-    query = f"'{PARENT_FOLDER_ID}' in parents and name='{file_name}'"
-    existing_files = service.files().list(q=query).execute().get('files', [])
+    query = f"name='{file_name}' and '{PARENT_FOLDER_ID}' in parents and trashed=false"
+    existing_files = service.files().list(q=query, supportsAllDrives=True, includeItemsFromAllDrives=True).execute().get('files', [])
 
     if existing_files:
         existing_file_id = existing_files[0]['id']
-        print(f"Existing file ID: {existing_file_id}")
+        print("Existing files:", existing_files)  # Add this line to print existing files
 
         # Upload the new content as an update
         media = MediaFileUpload(file_path, mimetype='text/csv')
         updated_file = service.files().update(
             fileId=existing_file_id,
-            media_body=media
+            media_body=media,
+            supportsAllDrives=True
         ).execute()
 
-        print(f"File '{file_name}' updated successfully as a Google Sheet.")
+        print(f"File '{file_name}' updated successfully.")
     else:
         # If the file doesn't exist, upload it as a new Google Sheet
         media = MediaFileUpload(file_path, mimetype='text/csv')
         file = service.files().create(
             body=new_sheet_metadata,
-            media_body=media
+            media_body=media,
+            supportsAllDrives=True
         ).execute()
 
-        print(f"File '{file_name}' uploaded successfully as a Google Sheet.")
+        print(f"File '{file_name}' uploaded successfully.")
 
 upload_csv("CSVs/C2.csv")
+
+
