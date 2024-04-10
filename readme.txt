@@ -5,6 +5,12 @@ google_auth_oauthlib==1.2.0
 pandas==2.0.3
 protobuf==5.26.1
 
+Installing Dependencies: (using pip installer)
+pip install google-api-python-client==2.123.0 google-auth-oauthlib==1.2.0 pandas==2.0.3 protobuf==5.26.1
+
+Diagram:
+
+
 Notes:
 Pandas should be on the same PATH as Python interpreter.
 With above Requirements, initial.py can be run to generate
