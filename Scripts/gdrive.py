@@ -1,7 +1,5 @@
 import os
-import io
 from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
@@ -55,5 +53,3 @@ def upload_csv(file_path):
         print(f"File '{file_name}' uploaded successfully.")
 
 upload_csv("CSVs/C2.csv")
-
-

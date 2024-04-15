@@ -68,19 +68,23 @@ spaces_table.to_sql('Spaces_Table', db, if_exists='replace', index=False)
 #CONSOLIDATION SCRIPT: Join the two tables on Facility_ID to create combined sheet
 
 #Table creation, joining, and CLEANING: removing unneeded/redundant Fields
-'''Excluded Columns/Fields: c.CRSE_OFFER_NBR, c.SESSION_CODE, INSTRUCTION_MODE, c.CLASS_MTG_NBR, c.MON, c.TUES, c.WED, c.THURS, c.FRI, c.SAT, c.SUN, c.MEETING_TIME_START, 
+'''Excluded Columns/Fields: INSTRUCTION_MODE, c.CLASS_MTG_NBR, c.MON, c.TUES, c.WED, c.THURS, c.FRI, c.SAT, c.SUN, c.MEETING_TIME_START, 
 MEETING_TIME_END, INSTR_ASSIGN_SEQ, SETID, FACILITY_ID:1, EFFDT, EFF_STATUS, ROOM, DESCR:1,
 c.FACILITY_GROUP, f.GENERL_ASSIGN, f.ACAD_ORG, f.FACILITY_PARTITION, f.MIN_UTLZN_PCT, f.LOCATION, 
 EXT_SA_FACILITY_ID, f.FACILITY_CONFLICT'''
 
 mk_consolidated = '''
     CREATE TABLE CONSOLIDATED AS
-    SELECT c.CRSE_ID, c.SUBJECT, c.CATALOG_NBR, c.CLASS_SECTION, c.DESCR, 
+    SELECT
+    
+    c.CRSE_ID || '_' || c.CRSE_OFFER_NBR || '_' || c.STRM || '_' || c.SESSION_CODE || '_' || c.SUBJECT AS composite_key,
+    c.CRSE_ID, c.CRSE_OFFER_NBR, c.STRM, c.SESSION_CODE, c.SUBJECT, c.CATALOG_NBR, c.CLASS_SECTION, c.DESCR, 
     c.ENRL_TOT, c.INSTRUCTION_MODE_DESCR, c.FACILITY_ID, c.STND_MTG_PAT,
     c.START_TIME, c.END_TIME, c.START_DT, c.END_DT, c.EMPLID, c.INSTR_ROLE, c.FIRST_NAME, c.LAST_NAME, c.EMAIL_ADDR, 
     
     f.DESCRSHORT,f.FACILITY_TYPE, f.ROOM_CAPACITY, f.BLDG_CD
     
+
     FROM Class_Data AS c
     INNER JOIN Facility_Table AS f ON c.FACILITY_ID = f.FACILITY_ID
 '''
