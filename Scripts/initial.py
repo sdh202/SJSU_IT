@@ -2,8 +2,6 @@ import sqlite3
 import pandas as pd
 import csv
 
-#TODO:Diagram
-
 # CSV file paths
 file1 = 'Datasets/Facility_Table_20240221.csv'
 file2 = 'Datasets/Class_Data_Feb_21.csv'
