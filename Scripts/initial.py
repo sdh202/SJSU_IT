@@ -48,9 +48,6 @@ spaces_table = spaces_table.rename(columns={'Room_Control_Systems_tech_that_cont
 #Create a new column 'HDMI' based on the contents of 'Room_Standards'
 spaces_table['HDMI'] = spaces_table['Room_Standards'].apply(lambda x: 'N' if pd.isna(x) else 'N' if 'No HDMI' in x else 'Y')
 
-#Fill null values in 'HDMI' column with 'N'
-#spaces_table['HDMI'] = spaces_table['HDMI'].fillna('N')
-
 #Get the index of the 'Room_Standards' column
 room_standards_index = spaces_table.columns.get_loc('Room_Standards')
 
