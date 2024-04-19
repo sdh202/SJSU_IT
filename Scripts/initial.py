@@ -1,6 +1,7 @@
 import sqlite3
 import pandas as pd
 import csv
+import os
 
 # CSV file paths
 file1 = 'Datasets/Facility_Table_20240221.csv'
@@ -17,22 +18,23 @@ db.execute(drop_table_consolidated)
 drop_table_C2 = "DROP TABLE IF EXISTS C2;"
 db.execute(drop_table_C2)
 
-# Drop the ROOMCAP_Join table if it exists
-drop_table_roomcap_join = "DROP TABLE IF EXISTS ROOMCAP_Join;"
-db.execute(drop_table_roomcap_join)
-
-# Drop the UC1_CLASSCOUNT table if it exists
-drop_table_uc1_classcount = "DROP TABLE IF EXISTS UC1_CLASSCOUNT;"
-db.execute(drop_table_uc1_classcount)
-
-# Drop the S_Join table if it exists
-drop_table_s_join = "DROP TABLE IF EXISTS S_Join;"
+# Drop the Spaces_Table table if it exists
+drop_table_s_join = "DROP TABLE IF EXISTS Class_Data;"
 db.execute(drop_table_s_join)
 
-#Pandas dataframe creation to read CSVs
-class_data = pd.read_csv('Datasets/Class_Data_Feb_21.csv', encoding='latin1', low_memory=False)
-facility_table = pd.read_csv('Datasets/Facility_Table_20240221.csv', encoding='latin1', low_memory=False)
-spaces_table = pd.read_csv('Datasets/Master_Academic_Teaching_Spaces.csv', encoding='latin1', low_memory=False)
+# Drop the Spaces_Table table if it exists
+drop_table_s_join = "DROP TABLE IF EXISTS Facility_Table;"
+db.execute(drop_table_s_join)
+
+# Drop the Spaces_Table table if it exists
+drop_table_s_join = "DROP TABLE IF EXISTS Spaces_Table;"
+db.execute(drop_table_s_join)
+
+# Pandas dataframe creation to read CSVs
+directory = 'Datasets'
+class_data = pd.read_csv(os.path.join(directory, 'Class_Data_Feb_21.csv'), encoding='latin1', low_memory=False)
+facility_table = pd.read_csv(os.path.join(directory, 'Facility_Table_20240221.csv'), encoding='latin1', low_memory=False)
+spaces_table = pd.read_csv(os.path.join(directory, 'Master_Academic_Teaching_Spaces.csv'), encoding='latin1', low_memory=False)
 
 #Convert first 2 dataframes to sql tables
 class_data.to_sql('Class_Data', db, if_exists='replace', index=False)
@@ -101,13 +103,12 @@ db.execute(mk_C2)
 
 #Convert the C2 data to a CSV with Pandas - Download to project folder as 'C2.csv' and overwrites if any code changes
 C2_data = pd.read_sql_query("SELECT * FROM C2", db)
-C2_data.to_csv('CSVs/C2.csv', index=False)
+C2_data.to_csv(os.path.join('CSVs', 'C2.csv'), index=False)
 
 
 #Convert the Spaces data to a CSV with Pandas - Download to project folder as 'Spaces.csv' and overwrites if any code changes
 Spaces_data = pd.read_sql_query("SELECT * FROM Spaces_Table", db)
-Spaces_data.to_csv('CSVs/Cleaned_Spaces.csv', index=False)
-
+Spaces_data.to_csv(os.path.join('CSVs', 'Cleaned_Spaces.csv'), index=False)
 
 # Print column headers for CSV files
 def print_column_headers(file_path):
@@ -116,6 +117,5 @@ def print_column_headers(file_path):
         headers = next(reader)  # Get the first row which contains the headers
         print("Column headers for", file_path, ":", headers)
 
-# Print column headers for CSV file 3
-print_column_headers('Datasets/Master_Academic_Teaching_Spaces.csv')
-print_column_headers('CSVs/C2.csv')
+# Print column headers for C2
+print_column_headers(os.path.join('CSVs', 'C2.csv'))
