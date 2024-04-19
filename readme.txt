@@ -1,13 +1,15 @@
 *** SJSUIT Data Visualization Script ***
 
 Requirements:
+Python 3.8.8 or newer: https://www.python.org/downloads/
+(Comes with SQLite and csv installed as standard libraries)
+
 google_api_python_client==2.123.0
 google_auth_oauthlib==1.2.0
 pandas==2.0.3
-protobuf==5.26.1
 
 1. Install Dependencies: (using pip installer)
-pip install google-api-python-client==2.123.0 google-auth-oauthlib==1.2.0 pandas==2.0.3 protobuf==5.26.1
+pip install google-api-python-client==2.123.0 google-auth-oauthlib==1.2.0 pandas==2.0.3
 
 2. Run initial.py Script: 2 ways
     1) With IDE like VSCode: open project folder and run initial.py
@@ -34,7 +36,7 @@ Upon Running:
     12) Rename the file as 'client_secret.json and place it in the sjsuIT folder
 
 4. Run gdrive.py Script: 2 ways
-    1) With IDE like VSCode: open project folder, open gdrive.py:
+    1) Recommended - With IDE like VSCode: open project folder, open gdrive.py:
         Edit Target Folder ID: 
             Go to desired folder/location in Google Drive.
             Copy the last portion of the URL
@@ -44,22 +46,21 @@ Upon Running:
         python gdrive.py
 
 Upon Running:
-- Authentication flow starts: choose appropriate Google Account and Allow Permission --> Success message appears
+- Authentication flow starts: choose appropriate Google Account and Allow Permission --> Success message appears*
+    - *If Authentication fails, close the script or press CTRL-C and rerun to authenticate again
 - File is uploaded/updated to specified location in Google Drive and Terminal message states this
 
-5. Open Tableau Desktop and select Google Drive as Data Source and navigate to C2.csv location
+5. Open Tableau Desktop, select Google Drive as Data Source and navigate to C2.csv location, then authenticate
 
 6. Dashboards and Visualizations appear - Changes to the dataset and rerunning 2 scripts as above updates the data and Tableau Dashboards
 
 Additional:
+
 To Edit the data and csv file or generate a new file: 
     Edit the initial.py script's SQL queries, rerun script, tables and files changed.
-    Running gdrive.py updates files with the same name, and creates them if they aren't made.
+    Running gdrive.py updates files with the same name in the drive location, and creates them if they aren't made.
 
 Pandas should be on the same PATH as Python interpreter.
 
 'SQLite' extension for VSCode is helpful for quick viewing
 and querying the database tables.
-
-Diagram:
-
