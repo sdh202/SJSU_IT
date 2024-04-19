@@ -9,8 +9,6 @@ file3 = 'Datasets/Master_Academic_Teaching_Spaces.csv'
 
 db = sqlite3.connect('initial.db')
 
-#TODO: Code Numbering
-
 # Drop the CONSOLIDATED table if it exists
 drop_table_consolidated = "DROP TABLE IF EXISTS CONSOLIDATED;"
 db.execute(drop_table_consolidated)	
@@ -100,8 +98,6 @@ mk_C2 = '''
         END = s.BLDG_RM;
 '''
 db.execute(mk_C2)
-#TODO:Filter out '()' and other '\n'
-#TODO:RESOLVE DISPARITIES: ON for s.BLDG_RM = ONLINE for c.FACILITY_ID
 
 #Convert the C2 data to a CSV with Pandas - Download to project folder as 'C2.csv' and overwrites if any code changes
 C2_data = pd.read_sql_query("SELECT * FROM C2", db)
