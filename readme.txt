@@ -1,4 +1,4 @@
-*** SJSUIT Data Visualization Script ***
+*** SJSUIT Data Processing & Upload Script ***
 
 Requirements:
 Python 3.8.8 or newer: https://www.python.org/downloads/
@@ -33,13 +33,13 @@ Upon Running:
     9) Click on OAuth consent screen and click 'Publish App'
     10) Go to Credentials, Create Credentials, OAuth Client ID, Choose Desktop App as Application Type, Any name, Click Create
     11) On OAuth client created screen, choose 'Download JSON'
-    12) Rename the file as 'client_secret.json and place it in the sjsuIT folder
+    12) Rename the file as 'client_secret.json and place it in the Process_Upload_Script folder
 
 4. Run gdrive.py Script: 2 ways
     1) Recommended - With IDE like VSCode: open project folder, open gdrive.py:
-        Edit Target Folder ID: 
+        One-time Step: Edit Target Folder ID: 
             Go to desired folder/location in Google Drive.
-            Copy the last portion of the URL
+            Copy the last portion of the URL - part after "folders/"
             Paste it in the script: PARENT_FOLDER_ID = "<Your ID Here>"
     2) Through Command Prompt/Terminal: 
         cd /path/sjsuIT/Scripts
@@ -60,7 +60,6 @@ To Edit the data and csv file or generate a new file:
     Edit the initial.py script's SQL queries, rerun script, tables and files changed.
     Running gdrive.py updates files with the same name in the drive location, and creates them if they aren't made.
 
-Pandas should be on the same PATH as Python interpreter.
+Pandas should be on the same PATH as Python interpreter. If issue appear, then try switching default Python interpreter.
 
-'SQLite' extension for VSCode is helpful for quick viewing
-and querying the database tables.
+'SQLite' extension for VSCode is helpful for quick viewing and querying the database tables.
