@@ -5,7 +5,7 @@ from googleapiclient.http import MediaFileUpload
 
 # Google drive integration with oauth
 SCOPES = ['https://www.googleapis.com/auth/drive']
-PARENT_FOLDER_ID = "1kSlJ1dRV1JexWGBVp2KN2U_OZcRkfUD1"
+PARENT_FOLDER_ID = "<Your ID Here>"
 
 def authenticate():
   flow = InstalledAppFlow.from_client_secrets_file('client_secret.json', SCOPES)
